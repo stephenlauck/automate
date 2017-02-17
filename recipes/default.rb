@@ -10,6 +10,7 @@
 
 execute 'automate-ctl setup --minimal' do
   action :nothing
+  only_if 'automate-ctl preflight-check'
 end
 
 chef_ingredient 'automate' do
