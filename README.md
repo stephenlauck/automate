@@ -10,9 +10,9 @@ Pick and OS and build
 
 `kitchen converge centos`
 
-Validate
+Validate the smoke tests in test/smoke/default/default_test.rb
 
-[https://33.33.33.10/](https://33.33.33.10/)
+`kitchen verify centos`
 
 #### Testing - Run the whole thing serially, best done after you have an inspec test validating that the server is up.
 
