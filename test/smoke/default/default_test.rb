@@ -18,3 +18,9 @@ describe command('automate-ctl status') do
   its('stdout') { should match(/run: postgresql:/) }
   its('stdout') { should match(/run: rabbitmq:/) }
 end
+
+# shmmax is hardcoded in Automate embedded cookbooks default attribute file
+shmmax_command = `sysctl -n kernel.shmmax`.chomp!.to_i
+describe shmmax_command do
+  it { should be >= 17179869184 }
+end
